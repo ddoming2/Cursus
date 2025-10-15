@@ -1,0 +1,25 @@
+NAME = libft.a
+SOURCES = ft_bzero.c ft_isascii.c ft_memcpy.c ft_strlen.c ft_isalnum.c \
+	  ft_isdigit.c ft_memmove.c ft_tolower.c ft_isalpha.c ft_isprint.c \
+	  ft_memset.c ft_strlcpy.c ft_toupper.c
+OBJECTS = $(SOURCES:.c=.o)
+CC = cc
+FLAGS = -Wall -Wextra -Werror
+
+all: $(NAME)
+
+$(NAME): $(OBJECTS)
+	ar rsc $(NAME) $(OBJECTS)
+
+%.o: %.c
+	$(CC) $(FLAGS) -c -o $@ $<
+
+clean:
+	rm -f $(OBJECTS)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: clean fclean re
