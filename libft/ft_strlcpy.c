@@ -1,15 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy_v2.c                                    :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddoming2 <ddoming2@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 20:06:37 by ddoming2          #+#    #+#             */
-/*   Updated: 2025/10/16 20:28:23 by ddoming2         ###   ########.fr       */
+/*   Updated: 2025/10/16 21:21:14 by ddoming2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
@@ -21,7 +20,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	{
 		while (src[i] != '\0' && size - 1 > i)
 		{
-			dst[i] = src [i];
+			dst[i] = src[i];
 			i++;
 		}
 	}
