@@ -6,7 +6,7 @@
 /*   By: ddoming2 <ddoming2@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 19:46:47 by ddoming2          #+#    #+#             */
-/*   Updated: 2025/10/16 19:59:01 by ddoming2         ###   ########.fr       */
+/*   Updated: 2025/10/19 21:06:26 by ddoming2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	destination = (unsigned char *)dest;
 	temp = (unsigned char *)src;
+	if (destination == NULL && temp == NULL)
+		return (NULL);
 	if (temp < destination)
 	{
 		while (n > 0)
