@@ -6,7 +6,7 @@
 /*   By: ddoming2 <ddoming2@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 21:28:35 by ddoming2          #+#    #+#             */
-/*   Updated: 2025/10/17 07:31:10 by ddoming2         ###   ########.fr       */
+/*   Updated: 2025/10/19 12:37:18 by ddoming2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <aio.h>
 # include <stddef.h>
+# include <stdio.h>
 void	ft_bzero(void *s, size_t n);
 int	ft_isalnum(int c);
 int	ft_isalpha(int c);
