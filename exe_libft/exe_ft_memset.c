@@ -6,7 +6,7 @@
 /*   By: ddoming2 <ddoming2@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 19:47:25 by ddoming2          #+#    #+#             */
-/*   Updated: 2025/10/02 20:05:22 by ddoming2         ###   ########.fr       */
+/*   Updated: 2025/10/19 20:44:24 by ddoming2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 //#include "libft.h"
@@ -19,7 +19,7 @@ void	*ft_memset(void *s, int c, size_t n)
 
 	i = 0;
 	str = (char *)s;
-	while ((i < n) && (str[i] != '\0'))
+	while ((i < n) && str[i])
 	{
 		str[i] = c;
 		i++;
@@ -29,12 +29,11 @@ void	*ft_memset(void *s, int c, size_t n)
 
 int	main(void)
 {
-	char	s[5] = "hola";
+	char	s[10] = "\0aaaaaaaa";
 	int	c;
 	size_t n;
 
-	c = 42;
-	n = 2;
-	printf("%s\n", s);
+	c = 'o';
+	n = 42;
 	printf("%s\n", (char *)ft_memset(s, c, n));
 }
