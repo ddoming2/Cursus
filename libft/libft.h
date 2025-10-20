@@ -6,7 +6,7 @@
 /*   By: ddoming2 <ddoming2@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 21:28:35 by ddoming2          #+#    #+#             */
-/*   Updated: 2025/10/19 21:46:30 by ddoming2         ###   ########.fr       */
+/*   Updated: 2025/10/20 06:53:48 by ddoming2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,5 @@ int	ft_toupper(int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
+void    *ft_memchr(const void *s, int c, size_t n);
 #endif
