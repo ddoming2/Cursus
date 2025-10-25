@@ -6,16 +6,15 @@
 /*   By: ddoming2 <ddoming2@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 21:28:35 by ddoming2          #+#    #+#             */
-/*   Updated: 2025/10/25 19:49:49 by ddoming2         ###   ########.fr       */
+/*   Updated: 2025/10/25 23:46:25 by ddoming2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <aio.h>
 # include <stddef.h>
-# include <stdio.h>
 # include <unistd.h>
+# include <stdlib.h>
 
 void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int c);
@@ -42,4 +41,6 @@ int		ft_atoi(const char *nptr);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	*ft_calloc(size_t nmemb, size_t size);
 #endif
