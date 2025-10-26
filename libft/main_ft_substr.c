@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   main_ft_substr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddoming2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/26 01:37:29 by ddoming2          #+#    #+#             */
-/*   Updated: 2025/10/26 20:42:39 by ddoming2         ###   ########.fr       */
+/*   Created: 2025/10/26 19:50:09 by ddoming2          #+#    #+#             */
+/*   Updated: 2025/10/26 20:32:12 by ddoming2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
+#include <stdio.h>
 
-char    *ft_substr(char const *s, unsigned int start, size_t len)
+int	main(void)
 {
-	unsigned char	*sub;
-	size_t			i;
-	size_t			j;
+	const char	*s = "tripouille";
+	unsigned int	start = 11;
+	size_t		len = 42000;
+	char		*res = ft_substr(s, start, len);
+//	char		*res = "hola";
+	int		i = 0;
 
-	i = 0;
-	j = 0;
-	if (start >= (unsigned int)ft_strlen(s))
-		return (ft_strdup(""));
-	while (i < start)
-		i++;
-	if (len > ft_strlen(s) - start)
-		len = ft_strlen(s) - start;
-	sub = ft_calloc(len + 1, sizeof(char));
-	if (!sub)
-		return (NULL);
-	while (s[i] && j < len)
+	while (res[i] != '\0')
 	{
-		sub[j] = s[i];
+		write(1, &res[i], 1);
 		i++;
-		j++;
 	}
-	return ((char *)sub);
+	printf("%d\n", ft_strlen(res));
+	write (1, "\n", 1);
+	return (0);
 }
