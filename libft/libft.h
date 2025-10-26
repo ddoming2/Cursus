@@ -6,7 +6,7 @@
 /*   By: ddoming2 <ddoming2@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 21:28:35 by ddoming2          #+#    #+#             */
-/*   Updated: 2025/10/26 20:20:16 by ddoming2         ###   ########.fr       */
+/*   Updated: 2025/10/26 22:03:05 by ddoming2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
 #endif
