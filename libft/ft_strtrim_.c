@@ -11,18 +11,69 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strtrim(char const *s, char const *set)
+int	ft_compare(char *s1, char *set)
 {
-	size_t	start;
-	size_t	finish;
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (!(s1[i] == set[j] && j <= ft_strlen(set)))
+	{
+		if (s1[i] == set[j])
+			i++;
+		else
+			j++;
+	}
+	return (i);
+}
+
+int	ft_erapmoc(char *s1, char *set)
+{
+	int 	i;
+	int	j;
+
+	i = ft_strlen(s1);
+	j = 0;
+	while (!(s1[i] = set[j] && j <= ft_strlen(set)))
+	{
+		if (s1[i] == set[j])
+			i--;
+		else
+			j++;
+	}
+	return (i);
+}
+
+char	*ft_trimmer(int start, int finish, char *s1)
+{
+	int	i;
+	int	j;
+	char	*trim;
 	
-	start = 0;
-	finish = ft_strlen(s);
-	if (!set || !s)
+	trim = ft_calloc(finish - start, sizeof(char));
+	i = start;
+	j = 0;
+	while (i <= finish)
+	{
+		trim[j]	= s1[i];
+		i++;
+		j++;
+	}
+	return (trim);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*trim;
+	int	start;
+	int	finish;
+
+	start = ft_compare((char *)s1, (char *)set);
+	finish = ft_erapmoc((char *)s1, (char *)set);
+	trim = ft_calloc(finish - start, sizeof(char));
+	if (!trim)
 		return (NULL);
-	while (s[start] && ft_strchr(set, s[start]))
-		start++;
-	while (finish > start && ft_strchr(set, s[finish - 1]))
-		finish--;
-	return (ft_substr(s, start, finish - start));
+	trim = ft_trimmer(start, finish, (char *)s1);
+	return (trim);
 }

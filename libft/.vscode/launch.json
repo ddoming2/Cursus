@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "//wsl.localhost/Ubuntu/home/ddoming2/42/Cursus/libft",
-      "program": "//wsl.localhost/Ubuntu/home/ddoming2/42/Cursus/libft/build/Debug/outDebug",
+      "cwd": "/home/ddoming2/42/Cursus/libft",
+      "program": "${fileDirname}\\${fileBasenameNoExtension}.out",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
