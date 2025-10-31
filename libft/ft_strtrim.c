@@ -6,7 +6,7 @@
 /*   By: ddoming2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 22:03:12 by ddoming2          #+#    #+#             */
-/*   Updated: 2025/10/27 18:52:56 by ddoming2         ###   ########.fr       */
+/*   Updated: 2025/10/31 12:34:33 by ddoming2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,7 +15,7 @@ char	*ft_strtrim(char const *s, char const *set)
 {
 	size_t	start;
 	size_t	finish;
-	
+
 	start = 0;
 	finish = ft_strlen(s);
 	if (!set || !s)
