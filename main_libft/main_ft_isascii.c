@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exe_ft_strrchr.c                                   :+:      :+:    :+:   */
+/*   main_ft_isascii.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddoming2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 19:12:22 by ddoming2          #+#    #+#             */
-/*   Updated: 2025/10/19 21:43:04 by ddoming2         ###   ########.fr       */
+/*   Created: 2025/11/05 07:01:04 by ddoming2          #+#    #+#             */
+/*   Updated: 2025/11/05 16:52:02 by ddoming2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <string.h>
+#include <ctype.h>
 
-char	*ft_strrchr(const char *s, int c)
+int	main(int argc, char *argv[])
 {
-	char	*character;
-	char	*str;
+	int	i;
 
-	character = NULL;
-	str = (char *)s;
-	while (*str)
+	i = 1;
+	while (argc > i)
 	{
-		if ((unsigned char)*str == (unsigned char)c)
-			character = str;
-		str++;
+		printf("%s\n", "Char Original");
+		printf("%s\n", &argv[i][0]);
+		printf("%s\n", "Resultado isascii");
+		printf("%d\n", isascii((int)argv[i][0]));
+		printf("%s\n", "Resultado ft_isascii");
+		printf("%d\n\n", ft_isascii((int)argv[i][0]));
+		i++;
 	}
-	if ((unsigned char)c== '\0')
-		return (str);
-	return (character);
-}
-
-int	main(void)
-{
-	const char	*s = "bonjour";
-	int		c = 'a';
-
-	printf("%s\n", ft_strrchr(s, c));
-	printf("%s\n", strrchr(s, c));
 	return (0);
 }

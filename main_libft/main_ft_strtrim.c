@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exe_ft_toupper.c                                   :+:      :+:    :+:   */
+/*   main_ft_strtrim.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddoming2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 18:53:00 by ddoming2          #+#    #+#             */
-/*   Updated: 2025/10/14 19:06:09 by ddoming2         ###   ########.fr       */
+/*   Created: 2025/10/27 18:54:36 by ddoming2          #+#    #+#             */
+/*   Updated: 2025/10/27 19:51:30 by ddoming2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <stdio.h>
 
-int	ft_toupper(int c)
+int	main(void)
 {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	else
-		return (c);
+	char	*s1 = "hola";
+	char	*set = "ha";
+
+	printf("%s\n", ft_strtrim(s1, set));
+	return (0);
 }

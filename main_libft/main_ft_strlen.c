@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   main_ft_strlen.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddoming2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 19:12:22 by ddoming2          #+#    #+#             */
-/*   Updated: 2025/10/19 19:43:20 by ddoming2         ###   ########.fr       */
+/*   Created: 2025/11/05 07:01:04 by ddoming2          #+#    #+#             */
+/*   Updated: 2025/11/05 17:01:48 by ddoming2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 #include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+int	main(int argc, char *argv[])
 {
-	unsigned int	i;
-	unsigned char	character;
+	int	i;
 
-	i = 0;
-	character = (unsigned char)c;
-	while (s[i] != '\0' && s[i] != character)
+	i = 1;
+	while (argc > i)
+	{
+		printf("%s\n", "Input");
+		printf("%s\n", &argv[i][0]);
+		printf("%s\n", "Resultado strlen");
+		printf("%ld\n", strlen((const char *)argv[i][0]));
+		printf("%s\n", "Resultado ft_strlen");
+		printf("%d\n\n", ft_strlen((const char *)argv[i][0]));
 		i++;
-	if (s[i] == character)
-		return ((char *)&s[i]);
-	return (NULL);
-}
-
-int	main(void)
-{
-	const char	*s = "bonjour";
-	int		c = 's';
-
-	printf("%s\n", ft_strchr(s, c));
-	printf("%s\n", strchr(s, c));
+	}
 	return (0);
 }

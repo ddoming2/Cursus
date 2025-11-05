@@ -1,41 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exe_ft_strrchr.c                                   :+:      :+:    :+:   */
+/*   main_ft_strjoin.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddoming2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 19:12:22 by ddoming2          #+#    #+#             */
-/*   Updated: 2025/10/19 21:43:04 by ddoming2         ###   ########.fr       */
+/*   Created: 2025/10/26 21:06:18 by ddoming2          #+#    #+#             */
+/*   Updated: 2025/10/26 21:28:37 by ddoming2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <string.h>
-
-char	*ft_strrchr(const char *s, int c)
-{
-	char	*character;
-	char	*str;
-
-	character = NULL;
-	str = (char *)s;
-	while (*str)
-	{
-		if ((unsigned char)*str == (unsigned char)c)
-			character = str;
-		str++;
-	}
-	if ((unsigned char)c== '\0')
-		return (str);
-	return (character);
-}
+#include <stdio.h>
 
 int	main(void)
 {
-	const char	*s = "bonjour";
-	int		c = 'a';
+	char const	*s1 = "hola";
+	char const	*s2 = "adios";
+	char		*join;
 
-	printf("%s\n", ft_strrchr(s, c));
-	printf("%s\n", strrchr(s, c));
+	join = ft_strjoin(s1, s2);
+	printf("%s\n", join);
 	return (0);
 }
