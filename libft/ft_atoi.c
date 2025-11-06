@@ -6,12 +6,12 @@
 /*   By: ddoming2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 11:50:54 by ddoming2          #+#    #+#             */
-/*   Updated: 2025/10/25 19:06:27 by ddoming2         ###   ########.fr       */
+/*   Updated: 2025/11/06 17:48:23 by ddoming2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_spacecount(char *s)
+static int	ft_spacecount(char *s)
 {
 	int	i;
 

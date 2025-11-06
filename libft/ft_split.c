@@ -6,79 +6,82 @@
 /*   By: ddoming2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 11:51:47 by ddoming2          #+#    #+#             */
-/*   Updated: 2025/11/04 19:43:09 by ddoming2         ###   ########.fr       */
+/*   Updated: 2025/11/06 17:09:40 by ddoming2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_word_counter(const char *s, char c)
+static size_t	count_words(const char *s, char c)
 {
+	size_t	count;
 	size_t	i;
-	size_t	j;
 
+	count = 0;
 	i = 0;
-	j = 0;
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		while (s[i] == c)
 			i++;
-		if (s[i] != '\0')
-			j++;
-		while (s[i] != '\0' && s[i] != c)
+		if (s[i])
+			count++;
+		while (s[i] && s[i] != c)
 			i++;
 	}
-	return (j);
+	return (count);
 }
 
-char	*ft_splitter(const char *s, char c, size_t *i)
+static void	free_split(char **result, size_t j)
+{
+	while (j > 0)
+		free(result[--j]);
+	free(result);
+}
+
+static char	*get_word(const char *s, char c, size_t *i)
 {
 	size_t	start;
-	size_t	finish;
+	size_t	end;
 
 	while (s[*i] == c)
 		(*i)++;
 	start = *i;
 	while (s[*i] && s[*i] != c)
 		(*i)++;
-	finish = *i;
-	return (ft_substr(s, start, finish - start));
+	end = *i;
+	return (ft_substr(s, start, end - start));
 }
 
-void	ft_free(char **solution, size_t j)
+static char	**fill_split(const char *s, char c, size_t word_count)
 {
-	while (j > 0)
-		free(solution[--j]);
-	free(solution);
-}
-
-char	**ft_arrayer(const char *s, char c, size_t word_count)
-{
-	char	**solution;
+	char	**result;
 	size_t	i;
 	size_t	j;
 
 	i = 0;
 	j = 0;
-	solution = (char **)malloc((word_count + 1) * sizeof(char *));
-	if (!solution)
+	result = (char **)malloc((word_count + 1) * sizeof(char *));
+	if (!result)
 		return (NULL);
 	while (j < word_count)
 	{
-		solution[j] = ft_splitter(s, c, &i);
-		if (!solution[j])
+		result[j] = get_word(s, c, &i);
+		if (!result[j])
 		{
-			ft_free(solution, j);
+			free_split(result, j);
 			return (NULL);
 		}
 		j++;
 	}
-	solution[j] = NULL;
-	return (solution);
+	result[j] = NULL;
+	return (result);
 }
 
 char	**ft_split(char const *s, char c)
 {
+	size_t	word_count;
+
 	if (!s)
 		return (NULL);
-	return (ft_arrayer(s, c, ft_word_counter(s, c)));
+	word_count = count_words(s, c);
+	return (fill_split(s, c, word_count));
 }

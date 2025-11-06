@@ -6,13 +6,13 @@
 /*   By: ddoming2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 12:36:37 by ddoming2          #+#    #+#             */
-/*   Updated: 2025/10/31 21:15:53 by ddoming2         ###   ########.fr       */
+/*   Updated: 2025/11/06 17:49:01 by ddoming2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_len(int n)
+static int	ft_len(int n)
 {
 	size_t	len;
 

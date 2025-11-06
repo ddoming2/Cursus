@@ -6,12 +6,12 @@
 /*   By: ddoming2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 20:44:26 by ddoming2          #+#    #+#             */
-/*   Updated: 2025/10/26 22:01:43 by ddoming2         ###   ########.fr       */
+/*   Updated: 2025/11/06 17:51:32 by ddoming2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	ft_joiner(char *join, char *string1, char *string2)
+static void	ft_joiner(char *join, char *string1, char *string2)
 {
 	int	i;
 	int	j;

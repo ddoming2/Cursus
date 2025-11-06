@@ -6,23 +6,46 @@
 /*   By: ddoming2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 22:03:12 by ddoming2          #+#    #+#             */
-/*   Updated: 2025/10/31 12:34:33 by ddoming2         ###   ########.fr       */
+/*   Updated: 2025/11/06 17:52:41 by ddoming2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strtrim(char const *s, char const *set)
+static int	is_in_set(const char *s1, char c)
+{
+	size_t	i;
+
+	i = 0;
+	while (s1[i] != '\0')
+	{
+		if (c == s1[i])
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
-	size_t	finish;
+	size_t	end;
+	size_t	i;
+	char	*str;
 
+	i = 0;
 	start = 0;
-	finish = ft_strlen(s);
-	if (!set || !s)
+	if (!s1 || !set)
 		return (NULL);
-	while (s[start] && ft_strchr(set, s[start]))
+	end = ft_strlen(s1);
+	while (s1[start] && is_in_set(set, s1[start]))
 		start++;
-	while (finish > start && ft_strchr(set, s[finish - 1]))
-		finish--;
-	return (ft_substr(s, start, finish - start));
+	while ((end > start) && is_in_set(set, s1[end - 1]))
+		end--;
+	str = ft_calloc((end - start + 1), sizeof(char));
+	if (!str)
+		return (NULL);
+	while (start < end)
+		str[i++] = s1[start++];
+	str[i] = '\0';
+	return (str);
 }
