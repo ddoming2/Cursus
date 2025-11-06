@@ -6,12 +6,12 @@
 /*   By: ddoming2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 11:51:47 by ddoming2          #+#    #+#             */
-/*   Updated: 2025/11/06 17:09:40 by ddoming2         ###   ########.fr       */
+/*   Updated: 2025/11/06 20:27:59 by ddoming2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static size_t	count_words(const char *s, char c)
+static size_t	ft_count_words(const char *s, char c)
 {
 	size_t	count;
 	size_t	i;
@@ -30,14 +30,14 @@ static size_t	count_words(const char *s, char c)
 	return (count);
 }
 
-static void	free_split(char **result, size_t j)
+static void	ft_free_split(char **result, size_t j)
 {
 	while (j > 0)
 		free(result[--j]);
 	free(result);
 }
 
-static char	*get_word(const char *s, char c, size_t *i)
+static char	*ft_get_word(const char *s, char c, size_t *i)
 {
 	size_t	start;
 	size_t	end;
@@ -51,7 +51,7 @@ static char	*get_word(const char *s, char c, size_t *i)
 	return (ft_substr(s, start, end - start));
 }
 
-static char	**fill_split(const char *s, char c, size_t word_count)
+static char	**ft_fill_split(const char *s, char c, size_t word_count)
 {
 	char	**result;
 	size_t	i;
@@ -64,10 +64,10 @@ static char	**fill_split(const char *s, char c, size_t word_count)
 		return (NULL);
 	while (j < word_count)
 	{
-		result[j] = get_word(s, c, &i);
+		result[j] = ft_get_word(s, c, &i);
 		if (!result[j])
 		{
-			free_split(result, j);
+			ft_free_split(result, j);
 			return (NULL);
 		}
 		j++;
@@ -82,6 +82,6 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	word_count = count_words(s, c);
-	return (fill_split(s, c, word_count));
+	word_count = ft_count_words(s, c);
+	return (ft_fill_split(s, c, word_count));
 }
